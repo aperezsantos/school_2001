@@ -27,4 +27,8 @@ class School
     end
   end
 
+  # def convert_end_time_to_clock_time
+  #
+  # end
+
 end
