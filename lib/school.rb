@@ -6,5 +6,16 @@ class School
     @hours_in_school_day = hours_in_school_day
     @student_names = []
   end
-  
+
+  def add_student_name(student_name)
+    @student_names << student_name
+  end
+
+  def end_time
+    time = @start_time.to_i + @hours_in_school_day
+    "#{time}:00"
+    # actual 16, integer
+    # expected "16:00", string
+  end
+
 end
