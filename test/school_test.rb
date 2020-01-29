@@ -51,4 +51,21 @@ class SchoolTest < Minitest::Test
     assert_equal '16:00', school1.end_time
     assert_equal '12:00', school2.end_time
   end
+
+  def test_school_is_full_time
+    school = School.new('9:00', 7)
+
+    assert school.is_full_time?
+    #can also be written like so: assert_equal true, school.is_full_time?
+  end
+
+  def test_student_names_are_standardized
+    school = School.new('9:00', 7)
+
+    school.add_student_name('Aurora')
+    school.add_student_name('tim')
+    school.add_student_name('megan')
+
+    assert_equal ["Aurora", "Tim", "Megan"], school.standard_student_names
+  end
 end

@@ -14,8 +14,17 @@ class School
   def end_time
     time = @start_time.to_i + @hours_in_school_day
     "#{time}:00"
-    # actual 16, integer
-    # expected "16:00", string
+  end
+
+  def is_full_time?
+    @hours_in_school_day > 4
+    #can also be written like so: @hours_in_school_day > 4 ? true : false
+  end
+
+  def standard_student_names
+    @student_names.map do |name|
+      name.capitalize
+    end
   end
 
 end
